@@ -1,4 +1,4 @@
-package agendadortarefas.infraestructure.business.dto;
+package agendadortarefas.business.dto;
 
 import lombok.*;
 

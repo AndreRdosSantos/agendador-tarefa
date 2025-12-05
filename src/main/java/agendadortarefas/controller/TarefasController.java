@@ -1,7 +1,8 @@
-package agendadortarefas.infraestructure.controller;
+package agendadortarefas.controller;
 
-import agendadortarefas.infraestructure.business.TarefasService;
-import agendadortarefas.infraestructure.business.dto.TarefasDTO;
+import agendadortarefas.business.TarefasService;
+import agendadortarefas.business.dto.TarefasDTO;
+import agendadortarefas.infraestructure.enums.StatusNotificacaoEnum;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -34,5 +35,23 @@ public class TarefasController {
     @GetMapping
     public ResponseEntity<List<TarefasDTO>> buscaTarefasPorEmail(@RequestHeader("Authorization") String token){
         return ResponseEntity.ok(tarefaService.buscaTarefasPorEmail(token));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deletaTarefaPorId(@RequestParam("id") String id){
+        tarefaService.deletaTarefaPorId(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping
+    public ResponseEntity<TarefasDTO> alteraStatusNotificacao(@RequestParam("status")StatusNotificacaoEnum status,
+                                                              @RequestParam("id") String id){
+        return ResponseEntity.ok(tarefaService.alteraStatus(status, id));
+    }
+
+    @PutMapping
+    public ResponseEntity<TarefasDTO> updateTarefas(@RequestBody TarefasDTO dto,
+                                                    @RequestParam("id") String id){
+        return ResponseEntity.ok(tarefaService.updateTarefas(dto, id));
     }
 }

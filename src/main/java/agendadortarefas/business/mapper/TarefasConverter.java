@@ -1,6 +1,6 @@
-package agendadortarefas.infraestructure.business.mapper;
+package agendadortarefas.business.mapper;
 
-import agendadortarefas.infraestructure.business.dto.TarefasDTO;
+import agendadortarefas.business.dto.TarefasDTO;
 import agendadortarefas.infraestructure.entity.TarefasEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

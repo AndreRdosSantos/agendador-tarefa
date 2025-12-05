@@ -1,4 +1,4 @@
-package agendadortarefas.infraestructure.business.dto;
+package agendadortarefas.business.dto;
 
 import agendadortarefas.infraestructure.enums.StatusNotificacaoEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
