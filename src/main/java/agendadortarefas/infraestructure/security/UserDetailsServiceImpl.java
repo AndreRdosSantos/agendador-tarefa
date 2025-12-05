@@ -1,6 +1,6 @@
 package agendadortarefas.infraestructure.security;
 
-import agendadortarefas.infraestructure.business.dto.UsuarioDTO;
+import agendadortarefas.business.dto.UsuarioDTO;
 import agendadortarefas.infraestructure.security.client.UsuarioClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
